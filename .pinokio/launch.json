@@ -1,0 +1,15 @@
+{
+  "title": "Hindi TTS - AI4Bharat F5",
+  "description": "Generate Hindi speech from text using AI4Bharat IndicF5 TTS",
+  "type": "terminal",
+  "shell": "bash",
+  "script": [
+    "sudo apt update",
+    "sudo apt install -y espeak-ng ffmpeg python3 python3-pip git",
+    "git clone https://github.com/AI4Bharat/IndicTTS.git || true",
+    "cd IndicTTS",
+    "pip3 install -r requirements.txt",
+    "pip3 install -e .",
+    "echo 'Setup complete. Try: python3 examples/run_tts.py --lang hi --input_text \"Mera naam Lokesh hai\"'"
+  ]
+}
