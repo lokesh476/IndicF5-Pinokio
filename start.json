@@ -4,17 +4,16 @@
     {
       "method": "shell.run",
       "params": {
-        "message": [
-          "echo 'Activating Conda environment...'",
-          "eval \"$(conda shell.bash hook)\"",
-          "conda activate pinokio-env",
-          "python app.py"
-        ],
+        "venv": "env",
         "env": {
           "XDG_DATA_HOME": "./cache/HF_HOME/hub",
-          "ALLOW_FILE_UPLOAD": "True",
-          "COQUI_TOS_AGREED": "1"
+          "ALLOW_FILE_UPLOAD": "True"
         },
+        "message": [
+          "echo 'Activating virtual environment...'",
+          "source env/bin/activate",
+          "python app.py"
+        ],
         "on": [
           {
             "event": "/(http://[0-9.:]+)/",
