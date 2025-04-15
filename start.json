@@ -9,7 +9,11 @@
           "XDG_DATA_HOME": "./cache/HF_HOME/hub",
           "ALLOW_FILE_UPLOAD": "True"
         },
-        "message": "python app.py",
+        "message": [
+          "echo 'Activating virtual environment...'",
+          "source env/bin/activate",
+          "python app.py"
+        ],
         "on": [
           {
             "event": "/(http://[0-9.:]+)/",
