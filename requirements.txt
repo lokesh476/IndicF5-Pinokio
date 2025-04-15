@@ -2,3 +2,4 @@ gradio
 torch
 numpy
 soundfile
+git+https://github.com/cocktailpeanut/TTS#egg=TTS
