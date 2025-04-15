@@ -1,10 +1,23 @@
 {
-  "shell": [
-    "echo 'Starting installation...'",
-    "python3 -m venv env",
-    "source env/bin/activate",
-    "pip install -U pip",
-    "pip install -r requirements.txt",
-    "pip install git+https://github.com/AI4Bharat/IndicF5.git"
+  "run": [
+    {
+      "method": "shell.run",
+      "params": {
+        "message": [
+          "echo 'Starting installation...'",
+          "python3 -m venv env",
+          "source env/bin/activate",
+          "pip install -U pip",
+          "pip install -r requirements.txt",
+          "pip install git+https://github.com/AI4Bharat/IndicF5.git"
+        ]
+      }
+    },
+    {
+      "method": "notify",
+      "params": {
+        "html": "Installation complete! Now click 'Start'."
+      }
+    }
   ]
 }
