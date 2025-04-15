@@ -1,0 +1,7 @@
+{
+  "shell": [
+    "source env/bin/activate",
+    "python app.py"
+  ],
+  "port": 7860
+}
