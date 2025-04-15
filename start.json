@@ -1,7 +1,28 @@
 {
-  "shell": [
-    "source env/bin/activate",
-    "python app.py"
-  ],
-  "port": 7860
+  "daemon": true,
+  "run": [
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "env",
+        "env": {
+          "XDG_DATA_HOME": "./cache/HF_HOME/hub",
+          "ALLOW_FILE_UPLOAD": "True"
+        },
+        "message": "python app.py",
+        "on": [
+          {
+            "event": "/(http://[0-9.:]+)/",
+            "done": true
+          }
+        ]
+      }
+    },
+    {
+      "method": "local.set",
+      "params": {
+        "url": "{{input.event[0]}}"
+      }
+    }
+  ]
 }
